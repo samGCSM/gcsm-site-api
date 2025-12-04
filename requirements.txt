@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+requests
+shapely
+geographiclib
+pdfplumber
+pyyaml
+reportlab
+pymupdf
+pandas
