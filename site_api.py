@@ -28,7 +28,20 @@ GOOGLE_STREETVIEW_KEY = os.getenv("GOOGLE_STREETVIEW_KEY")
 DEFAULT_FPA_DIR = r"Q:\Engineering\All current FPAs"
 
 app = FastAPI(title="GCSM Site Analyzer API")
+from fastapi.middleware.cors import CORSMiddleware
 
+app = FastAPI(title="GCSM Site Analyzer API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://gcsm-site-specific.lovable.app",
+        "http://localhost:5173",
+    ],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # ---------- Request/Response models ----------
 
@@ -142,3 +155,4 @@ def analyze_site(req: SiteRequest):
         wind_source=wind_source,
         fpa_zone_results=fpa_zone_results,
     )
+
