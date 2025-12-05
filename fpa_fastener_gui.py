@@ -39,7 +39,7 @@ UA = {"User-Agent": "fpa-zone-fastener/2.1"}
 # ------------------------------------------------------------------
 # Configuration
 # ------------------------------------------------------------------
-DEFAULT_FPA_DIR = r"Q:\\Engineering\\All current FPAs"
+DEFAULT_FPA_DIR = os.getenv("FPA_DIR", os.path.join(os.path.dirname(__file__), "fpas"))
 HEIGHTS = [20, 25, 30, 40, 50, 60]
 WIND_COLS = [120, 130, 140, 150, 160, 170, 180, 190, 200]
 EXPOSURES = ["B", "C", "D"]
@@ -492,3 +492,4 @@ if __name__ == "__main__":
             print("Missing required arguments. Use --gui or provide --panel --address --exposure --height --wind-col")
             raise SystemExit(2)
         main_cli(args)
+
