@@ -16,10 +16,11 @@ app.add_middleware(
 	"https://gcsm-site-specific.lovable.app/",
 	"https://gcsm-site-specific.lovable.app",
     ],
-    allow_origin_regex=r"https://.*\.lovableproject\.com",
+    allow_origin_regex=r"https://.*\.(lovable\.app|lovableproject\.com)",
     allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 
