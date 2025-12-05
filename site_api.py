@@ -25,7 +25,12 @@ from site_specific_desktop_app import round_up  # for Z1/Z2/Z3 if we want
 GOOGLE_STREETVIEW_KEY = os.getenv("GOOGLE_STREETVIEW_KEY")
 
 # Your existing FPA directory
-DEFAULT_FPA_DIR = r"Q:\Engineering\All current FPAs"
+import os
+
+DEFAULT_FPA_DIR = os.getenv(
+    "FPA_DIR",
+    os.path.join(os.path.dirname(__file__), "fpas")
+)
 
 app = FastAPI(title="GCSM Site Analyzer API")
 from fastapi.middleware.cors import CORSMiddleware
@@ -155,4 +160,5 @@ def analyze_site(req: SiteRequest):
         wind_source=wind_source,
         fpa_zone_results=fpa_zone_results,
     )
+
 
