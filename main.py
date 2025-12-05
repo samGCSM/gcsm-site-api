@@ -10,7 +10,9 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://dctxiunpvdungcwwqliw.lovableproject.com",
+	"https://d8e5e12f-4b06-4dca-9816-62fb70779a59.lovableproject.com",
         "http://localhost:5173",
+	"https://gcsm-site-specific.lovable.app/",
     ],
     allow_credentials=True,
     allow_methods=["*"],
