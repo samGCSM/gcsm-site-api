@@ -12,9 +12,12 @@ app.add_middleware(
         "https://dctxiunpvdungcwwqliw.lovableproject.com",
 	"https://d8e5e12f-4b06-4dca-9816-62fb70779a59.lovableproject.com",
         "http://localhost:5173",
+        "http://localhost:8080",
 	"https://gcsm-site-specific.lovable.app/",
     ],
-    allow_credentials=True,
+    allow_origin_regex=r"https://.*\.lovableproject\.com",
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
